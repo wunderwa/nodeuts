@@ -1,5 +1,7 @@
 export * from './clearConsole'
 export * from './clearDir'
 export * from './removeDir'
+export * from './initReadLine'
+export * from './process'
 export * from './version'
 export * from './writeFile'

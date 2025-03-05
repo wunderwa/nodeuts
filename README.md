@@ -16,6 +16,9 @@ type updateVersion = (
   up: 'major' | 'minor' | 'patch',
 ) => Version | null
 type updateSemver = (version: string, up: 'major' | 'minor' | 'patch') => string
+type initinitReadLine = () => readline.Interface
+type execLiveLog = (cmd: string, cwd: string) => Promise<void>
+type exec = (cmd: string) => Promise<{ stdout: string; stderr: string }>
 ```
 
 ### Releases (add tag)
