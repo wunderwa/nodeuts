@@ -49,8 +49,9 @@
   "module": "./dist/index.mjs",
   "repository": "make-everything-simple/npm-template-typescript.git",
   "scripts": {
-    "build": "tsup --config ./config/tsup.config.ts",
     "fmt": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"config/**/*\" --config config/.prettierrc",
+    "build": "tsup --config ./config/tsup.config.ts",
+    "release": "npm run build && npm publish --access public",
     "docs:build": "typedoc --options ./config/typedoc.json",
     "docs:serve": "npm run docs:build && http-server ./docs --cors -p 8080 -c-1",
     "lint": "eslint \"{src,tests}/**/*.ts\" --config ./config/.eslintrc.cjs",
