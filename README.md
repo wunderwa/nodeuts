@@ -2,13 +2,21 @@
 
 Typescript node utils library
 
-- [x] clearConsole: (isSoft = false) => void
-- [x] clearDir: (path: string) => Promise<void>
-- [x] removeDir: (path: string) => <void>
-- [x] writeFile: (path: string, content: string) => Promise<void>
-- [x] parseVersion: (version: string, up: 'major' | 'minor' | 'patch') => Version | null
-- - [x] updateVersion: (version: string, up: 'major' | 'minor' | 'patch') => Version | null
-- - - [x] updateSemver: (version: string, up: 'major' | 'minor' | 'patch') => string
+```typescript
+type clearConsole = (isSoft: boolean) => void
+type clearDir = (path: string) => Promise<void>
+type removeDir = (path: string) => void
+type writeFile = (path: string, content: string) => Promise<void>
+type parseVersion = (
+  version: string,
+  up: 'major' | 'minor' | 'patch',
+) => Version | null
+type updateVersion = (
+  version: string,
+  up: 'major' | 'minor' | 'patch',
+) => Version | null
+type updateSemver = (version: string, up: 'major' | 'minor' | 'patch') => string
+```
 
 ### Releases (add tag)
 

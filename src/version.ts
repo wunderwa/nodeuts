@@ -1,10 +1,10 @@
-type Version = {
+export type Version = {
   major: number
   minor: number
   patch: number
 }
 
-type VersionLevel = 'major' | 'minor' | 'patch'
+export type VersionLevel = 'major' | 'minor' | 'patch'
 
 export const parseVersion = (version: string): Version | null => {
   const parsed = version.match(
