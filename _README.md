@@ -14,9 +14,9 @@ Let developers who publish libraries via npm share with the team or community qu
 2. **Git hook**: ensure your code is qualified with lint when committing and test when pushing from your early stage on your local machine
 3. **CI jobs**: trigger on `each PR` or `Push event` to ensure jobs `Lint -> Build -> Test` are verified
 4. **CD (publish) jobs**: trigger when a `new tag` is pushed
-    1. Create a new release based on your commit messages like [this](https://github.com/make-everything-simple/npm-template-typescript/releases)
-    2. Publish the npm package to npmjs like [this](https://www.npmjs.com/package/@make-everything-simple/npm-template-typescript)
-    3. Create | Update the Github page like [this](https://github.com/make-everything-simple/npm-template-typescript/pkgs/npm/npm-template-typescript)
+   1. Create a new release based on your commit messages like [this](https://github.com/make-everything-simple/npm-template-typescript/releases)
+   2. Publish the npm package to npmjs like [this](https://www.npmjs.com/package/@make-everything-simple/npm-template-typescript)
+   3. Create | Update the Github page like [this](https://github.com/make-everything-simple/npm-template-typescript/pkgs/npm/npm-template-typescript)
 5. Documentation Generator for Typescript.
 
 ## Prerequisites
@@ -82,7 +82,7 @@ npm run lint | yarn lint
 # check lint's rules and try to fix
 npm run lint:fix | yarn lint:fix
 # format your code
-npm run prettier:format | yarn prettier:format
+npm run fmt | yarn fmt
 ```
 
 ### Verify unit test
@@ -105,11 +105,11 @@ npm run docs:serve
 1. We use the git rebase strategy to keep tracking meaningful commit message. Help to enable rebase when pull `$ git config --local pull.rebase true`
 2. Follow TypeScript Style Guide [Google](https://google.github.io/styleguide/tsguide.html)
 3. Follow Best-Practices in coding:
-    1. [Clean code](https://github.com/labs42io/clean-code-typescript) make team happy
-    2. [Return early](https://szymonkrajewski.pl/why-should-you-return-early/) make code safer and use resource Efficiency
-    3. [Truthy & Falsy](https://frontend.turing.edu/lessons/module-1/js-truthy-falsy-expressions.html) make code shorter
-    4. [SOLID Principles](https://javascript.plainenglish.io/solid-principles-with-type-script-d0f9a0589ec5) make clean code
-    5. [DRY & KISS](https://dzone.com/articles/software-design-principles-dry-and-kiss) avoid redundancy and make your code as simple as possible
+   1. [Clean code](https://github.com/labs42io/clean-code-typescript) make team happy
+   2. [Return early](https://szymonkrajewski.pl/why-should-you-return-early/) make code safer and use resource Efficiency
+   3. [Truthy & Falsy](https://frontend.turing.edu/lessons/module-1/js-truthy-falsy-expressions.html) make code shorter
+   4. [SOLID Principles](https://javascript.plainenglish.io/solid-principles-with-type-script-d0f9a0589ec5) make clean code
+   5. [DRY & KISS](https://dzone.com/articles/software-design-principles-dry-and-kiss) avoid redundancy and make your code as simple as possible
 4. Make buildable commit and pull latest code from `main` branch frequently
 5. Follow the [Semantic Versioning](https://semver.org/) once we are ready for release
 6. Use readable commit message [karma](http://karma-runner.github.io/6.3/dev/git-commit-msg.html) to let us use it in the release notes

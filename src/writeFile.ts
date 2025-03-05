@@ -1,5 +1,5 @@
-import  {dirname} from 'node:path'
-import  { existsSync, promises } from 'node:fs'
+import { dirname } from 'node:path'
+import { existsSync, promises } from 'node:fs'
 
 export const writeFile = async (
   path: string,

@@ -1,11 +1,5 @@
-import {
-  existsSync,
-  lstatSync,
-  rmSync,
-  unlinkSync,
-  readdirSync,
-} from 'node:fs'
-import {join} from "node:path"
+import { existsSync, lstatSync, rmSync, unlinkSync, readdirSync } from 'node:fs'
+import { join } from 'node:path'
 
 export const clearDir = async (path: string): Promise<void> => {
   if (existsSync(path)) {
