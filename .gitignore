@@ -30,3 +30,4 @@ artifacts/
 # Build files
 /dist
 /docs
+/exec

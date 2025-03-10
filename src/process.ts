@@ -1,18 +1,29 @@
 import child_process from 'node:child_process'
-import { promisify } from 'node:util'
 
-export const exec = promisify(child_process.exec)
+export type ExecLog = 'all' | 'data' | 'error' | 'none'
 
-export const execLiveLog = async (cmd: string, cwd: string, log = true) => {
-  return new Promise((resolve) => {
-    const { exec } = child_process
-    const command = exec(cmd, { cwd })
+export type ExecOptions = {
+  cwd: string
+  log: ExecLog
+}
+
+export const execLiveLog = async (
+  cmd: string,
+  { cwd = '.', log = 'none' }: ExecOptions = {},
+): Promise<string[]> => {
+  return new Promise((resolve, reject) => {
+    const response: string[] = []
+    const command = child_process.exec(cmd, { cwd })
+
     command.stdout?.on('data', (output) => {
-      if (log) console.log(output.toString())
+      response.push(output)
+      if (['data', 'all'].includes(log)) console.log(output.toString())
     })
     command.stdout?.on('error', (output) => {
-      if (log) console.log(output.toString())
+      if (['error', 'all'].includes(log)) console.log(output.toString())
+      reject(output.toString())
     })
-    command.stdout?.on('end', () => resolve(''))
+
+    command.stdout?.on('end', () => resolve(response))
   })
 }
