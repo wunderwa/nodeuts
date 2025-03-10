@@ -17,8 +17,14 @@ type updateVersion = (
 ) => Version | null
 type updateSemver = (version: string, up: 'major' | 'minor' | 'patch') => string
 type initinitReadLine = () => readline.Interface
-type execLiveLog = (cmd: string, cwd: string) => Promise<void>
-type exec = (cmd: string) => Promise<{ stdout: string; stderr: string }>
+type ExecOptions = {
+  cwd?: string
+  log?: ExecLog
+}
+type execLiveLog = (
+  cmd: string,
+  { cwd = '.', log = 'none' }: ExecOptions,
+) => Promise<string[]>
 ```
 
 ### Releases (add tag)
@@ -35,5 +41,5 @@ yarn build
 npm login
 npm publish --access public
 
-npm unpublish stasige@0.3.0
+npm unpublish @wunderwa/nodeuts@0.1.1
 ```

@@ -1,7 +1,7 @@
 {
   "name": "@wunderwa/nodeuts",
   "description": "Typescript node utils library",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": "Andrei Zagoruiko<adkrix@gmail.com> (https://zor.su/)",
   "bugs": "https://github.com/wunderwa/nodeuts/issues",
   "devDependencies": {
