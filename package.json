@@ -1,13 +1,15 @@
 {
   "name": "@wunderwa/nodeuts",
   "description": "Typescript node utils library",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "author": "Andrei Zagoruiko<adkrix@gmail.com> (https://zor.su/)",
   "bugs": "https://github.com/wunderwa/nodeuts/issues",
+  "dependencies": {
+    "@types/node": "^22.13.10"
+  },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",
     "@types/jest": "^29.5.11",
-    "@types/node": "^22.13.9",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^8.26.0",
     "eslint": "^8.56.0",
@@ -24,6 +26,7 @@
     "syncpack": "^13.0.0",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
+    "tsx": "^4.19.3",
     "tsup": "^8.0.1",
     "typedoc": "^0.26.6",
     "typescript": "^5.3.3"
@@ -49,6 +52,7 @@
   "module": "./dist/index.mjs",
   "repository": "wunderwa/nodeuts.git",
   "scripts": {
+    "exec": "node --import=tsx ./src/copy.ts $@",
     "fmt": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"config/**/*\" --config config/.prettierrc",
     "build": "tsup --config ./config/tsup.config.ts",
     "release": "npm run build ; npm login ; npm publish --access public",

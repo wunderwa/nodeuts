@@ -1,5 +1,6 @@
-import { existsSync, lstatSync, rmSync, unlinkSync, readdirSync } from 'node:fs'
+import { existsSync, lstatSync, unlinkSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
+import { removeDir } from './removeDir'
 
 export const clearDir = async (path: string): Promise<void> => {
   if (existsSync(path)) {
@@ -7,7 +8,7 @@ export const clearDir = async (path: string): Promise<void> => {
       const fPath = join(path, name)
       const stat = lstatSync(fPath)
       if (stat.isDirectory()) {
-        rmSync(fPath, { recursive: true })
+        removeDir(fPath)
       } else {
         unlinkSync(fPath)
       }
